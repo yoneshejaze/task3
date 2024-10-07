@@ -3,6 +3,7 @@ package com.example.chesswithrecview;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements StoneAdapter.ItemSelected {
     private Button button;
+    private TextView textView;
     private RecyclerView recyclerView;
     private StoneAdapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements StoneAdapter.Item
     private void initViews() {
         button=findViewById(R.id.btnShowList);
         recyclerView=findViewById(R.id.list);
+        textView=findViewById(R.id.txtDetails);
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -72,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements StoneAdapter.Item
 
     @Override
     public void onItemClicked(int Index) {
-        Toast.makeText(this, stones.get(Index).getName()+" was clicked", Toast.LENGTH_SHORT).show();
+        String Details[]=getResources().getStringArray(R.array.details);
+        textView.setText(Details[Index]);
     }
 }

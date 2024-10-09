@@ -2,13 +2,14 @@
 <resources>
 
     <string-array name="stones">
-        <item>Chess Piece - King</item>
-        <item>Chess Piece - Queen</item>
-        <item>Chess Piece - Bishop</item>
-        <item>Chess Piece - Knight</item>
-        <item>Chess Piece - Rook</item>
-        <item>Chess Piece - Pawn</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
     </string-array>
+
 
     <string-array name="details">
         <item>The king moves exactly one vacant square in any direction: forwards, backwards, left, right, or diagonally. It can also castle in conjunction with a rook.</item>

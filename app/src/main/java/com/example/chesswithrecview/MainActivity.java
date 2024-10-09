@@ -1,5 +1,6 @@
 package com.example.chesswithrecview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,12 +43,12 @@ public class MainActivity extends AppCompatActivity implements StoneAdapter.Item
 
     private void initImgArray() {
         images=new int[6];
-        images[0]=R.drawable.king_piece;
-        images[1]=R.drawable.queen_piece;
-        images[2]=R.drawable.bishop_piece;
-        images[3]=R.drawable.knight_piece;
-        images[4]=R.drawable.rook_piece;
-        images[5]=R.drawable.pawn_piece;
+        images[0]=R.drawable.img;
+        images[1]=R.drawable.img_1;
+        images[2]=R.drawable.img_2;
+        images[3]=R.drawable.img_3;
+        images[4]=R.drawable.img_4;
+        images[5]=R.drawable.img_5;
     }
 
     private void initViews() {
@@ -74,8 +75,11 @@ public class MainActivity extends AppCompatActivity implements StoneAdapter.Item
     }
 
     @Override
-    public void onItemClicked(int Index) {
-        String Details[]=getResources().getStringArray(R.array.details);
-        textView.setText(Details[Index]);
+    public void onItemClicked(int index) {
+        Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+        intent.putExtra("image", stones.get(index).getImg());
+        intent.putExtra("name", stones.get(index).getName());
+        startActivity(intent);
     }
+
 }

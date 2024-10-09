@@ -43,12 +43,12 @@ public class MainActivity extends AppCompatActivity implements StoneAdapter.Item
 
     private void initImgArray() {
         images=new int[6];
-        images[0]=R.drawable.img;
-        images[1]=R.drawable.img_1;
-        images[2]=R.drawable.img_2;
-        images[3]=R.drawable.img_3;
-        images[4]=R.drawable.img_4;
-        images[5]=R.drawable.img_5;
+        images[0]=R.drawable.fruit1;
+        images[1]=R.drawable.fruit2;
+        images[2]=R.drawable.fruit3;
+        images[3]=R.drawable.fruit4;
+        images[4]=R.drawable.fruit5;
+        images[5]=R.drawable.fruit6;
     }
 
     private void initViews() {
@@ -77,9 +77,10 @@ public class MainActivity extends AppCompatActivity implements StoneAdapter.Item
     @Override
     public void onItemClicked(int index) {
         Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
-        intent.putExtra("image", stones.get(index).getImg());
+        intent.putExtra("image", images[index]);
         intent.putExtra("name", stones.get(index).getName());
         startActivity(intent);
     }
 
 }
+
